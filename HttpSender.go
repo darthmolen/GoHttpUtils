@@ -24,7 +24,8 @@ func postFromReader(URL string, buffer io.Reader, mime string) (string, error) {
 	defer r.Body.Close()
 	resp, _ := ioutil.ReadAll(r.Body)
 
-	return string(resp), nil
+	ret := string(resp)
+	return ret, nil
 }
 
 // PostByteArray sends a Byte Array to another server via POST
